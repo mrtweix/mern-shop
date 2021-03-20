@@ -1,0 +1,30 @@
+{
+  "name": "mern-shop",
+  "version": "1.0.0",
+  "description": "Ecommerce web app for shopping",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtweix/mern-shop.git"
+  },
+  "author": "Barender Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrtweix/mern-shop/issues"
+  },
+  "homepage": "https://github.com/mrtweix/mern-shop#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
