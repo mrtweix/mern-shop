@@ -1,11 +1,21 @@
+import path from "path";
 import express from "express";
 import dotenv from "dotenv";
-import products from "./data/products.js";
+import colors from "colors";
+import morgan from "morgan";
 import connectDB from "./config/db.js";
 
 dotenv.config();
+
 connectDB();
+
 const app = express();
+
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
+
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Api is running");
@@ -24,5 +34,7 @@ const PORT = process.env.PORT || 8000;
 
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  console.log(
+    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
+  )
 );
