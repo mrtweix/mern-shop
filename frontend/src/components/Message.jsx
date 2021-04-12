@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Alert } from "react-bootstrap";
 
 const Message = ({ variant, children }) => {
@@ -9,4 +9,4 @@ Message.defaultProps = {
   variant: "info",
 };
 
-export default memo(Message);
+export default Message;

@@ -78,5 +78,4 @@ const ShippingScreen = ({ history }) => {
     </FormContainer>
   );
 };
-
 export default memo(ShippingScreen);
