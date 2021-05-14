@@ -4,6 +4,9 @@
   "description": "Ecommerce web app for shopping",
   "type": "module",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
